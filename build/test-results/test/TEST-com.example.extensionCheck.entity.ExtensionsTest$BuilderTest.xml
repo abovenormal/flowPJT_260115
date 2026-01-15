@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Builder 테스트" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.828Z" hostname="hansehwans-MacBook-Air.local" time="0.001">
+  <properties/>
+  <testcase name="모든 필드가 올바르게 설정된다" classname="com.example.extensionCheck.entity.ExtensionsTest$BuilderTest" time="0.0"/>
+  <testcase name="CUSTOM 타입 확장자 생성" classname="com.example.extensionCheck.entity.ExtensionsTest$BuilderTest" time="0.0"/>
+  <testcase name="FIXED 타입 확장자 생성" classname="com.example.extensionCheck.entity.ExtensionsTest$BuilderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

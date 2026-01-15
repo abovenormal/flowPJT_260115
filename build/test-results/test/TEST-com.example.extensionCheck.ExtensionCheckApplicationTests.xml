@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.extensionCheck.ExtensionCheckApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:45.110Z" hostname="hansehwans-MacBook-Air.local" time="0.286">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.extensionCheck.ExtensionCheckApplicationTests" time="0.286"/>
+  <system-out><![CDATA[16:44:41.488 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.extensionCheck.ExtensionCheckApplicationTests]: ExtensionCheckApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:44:41.635 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.extensionCheck.ExtensionCheckApplication for test class com.example.extensionCheck.ExtensionCheckApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.1)
+
+2026-01-15T16:44:41.982+09:00  INFO 53835 --- [extensionCheck] [    Test worker] c.e.e.ExtensionCheckApplicationTests     : Starting ExtensionCheckApplicationTests using Java 17.0.16 with PID 53835 (started by han in /Users/han/Sehwan/Dev/flow/flowPjt)
+2026-01-15T16:44:41.983+09:00  INFO 53835 --- [extensionCheck] [    Test worker] c.e.e.ExtensionCheckApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T16:44:42.463+09:00  INFO 53835 --- [extensionCheck] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-15T16:44:42.503+09:00  INFO 53835 --- [extensionCheck] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
+2026-01-15T16:44:42.795+09:00  INFO 53835 --- [extensionCheck] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-15T16:44:42.845+09:00  INFO 53835 --- [extensionCheck] [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
+2026-01-15T16:44:43.259+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-15T16:44:43.295+09:00  INFO 53835 --- [extensionCheck] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-15T16:44:43.455+09:00  INFO 53835 --- [extensionCheck] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72396b87
+2026-01-15T16:44:43.456+09:00  INFO 53835 --- [extensionCheck] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-15T16:44:43.509+09:00  WARN 53835 --- [extensionCheck] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-15T16:44:43.524+09:00  INFO 53835 --- [extensionCheck] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/extensioncheck?useSSL=false&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: extensioncheck/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-15T16:44:44.293+09:00  INFO 53835 --- [extensionCheck] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-15T16:44:44.344+09:00  INFO 53835 --- [extensionCheck] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-15T16:44:44.417+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-15T16:44:44.751+09:00  WARN 53835 --- [extensionCheck] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-15T16:44:44.816+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-01-15T16:44:45.091+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2026-01-15T16:44:45.092+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@15c90b87]]
+2026-01-15T16:44:45.092+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2026-01-15T16:44:45.101+09:00  INFO 53835 --- [extensionCheck] [    Test worker] c.e.e.ExtensionCheckApplicationTests     : Started ExtensionCheckApplicationTests in 3.324 seconds (process running for 4.843)
+2026-01-15T16:44:45.402+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2026-01-15T16:44:45.402+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@15c90b87]]
+2026-01-15T16:44:45.402+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

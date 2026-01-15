@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>File Extension Filter Management</title>
+    <!-- jQuery 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- WebSocket (SockJS + STOMP) -->
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { primary: "#3b82f6", "background-light": "#ffffff", "background-dark": "#0f172a" },
+                    fontFamily: { display: ["Inter", "sans-serif"] },
+                },
+            },
+        };
+    </script>
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors duration-200">
+<div class="max-w-4xl mx-auto px-6 py-12">
+    <header class="mb-8 border-b border-slate-200 dark:border-slate-800 pb-6">
+        <h1 class="text-2xl font-semibold text-slate-900 dark:text-white">파일 확장자 차단</h1>
+        <p class="text-slate-500 dark:text-slate-400 mt-1">체크박스의 확장자를 클릭하여 제외할 확장자를 선택하세요.</p>
+    </header>
+
+    <div class="bg-background-light dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
+
+        <!-- 고정 확장자 섹션 -->
+        <section class="flex flex-col md:flex-row gap-6 mb-8 items-start">
+            <div class="w-full md:w-40 pt-1">
+                <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">고정 확장자</h2>
+            </div>
+            <div class="flex-1 flex flex-wrap gap-x-6 gap-y-3" id="fixed-checkbox-area">
+                <!-- value 값을 추가하여 백엔드와 매핑 -->
+                <label class="inline-flex items-center group cursor-pointer">
+                    <input class="fixed-ext form-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800 transition-all" type="checkbox" value="bat"/>
+                    <span class="ml-2 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">bat</span>
+                </label>
+                <label class="inline-flex items-center group cursor-pointer">
+                    <input class="fixed-ext form-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800 transition-all" type="checkbox" value="cmd"/>
+                    <span class="ml-2 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">cmd</span>
+                </label>
+                <label class="inline-flex items-center group cursor-pointer">
+                    <input class="fixed-ext form-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800 transition-all" type="checkbox" value="com"/>
+                    <span class="ml-2 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">com</span>
+                </label>
+                <label class="inline-flex items-center group cursor-pointer">
+                    <input class="fixed-ext form-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800 transition-all" type="checkbox" value="cpl"/>
+                    <span class="ml-2 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">cpl</span>
+                </label>
+                <label class="inline-flex items-center group cursor-pointer">
+                    <input class="fixed-ext form-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800 transition-all" type="checkbox" value="exe"/>
+                    <span class="ml-2 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">exe</span>
+                </label>
+                <label class="inline-flex items-center group cursor-pointer">
+                    <input class="fixed-ext form-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800 transition-all" type="checkbox" value="scr"/>
+                    <span class="ml-2 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">scr</span>
+                </label>
+                <label class="inline-flex items-center group cursor-pointer">
+                    <input class="fixed-ext form-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800 transition-all" type="checkbox" value="js"/>
+                    <span class="ml-2 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">js</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- 커스텀 확장자 입력 섹션 -->
+        <section class="flex flex-col md:flex-row gap-6 mb-2 items-start">
+            <div class="w-full md:w-40 pt-2.5">
+                <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">커스텀 확장자</h2>
+            </div>
+            <div class="flex-1 flex gap-2 w-full">
+                <input id="customInput" class="flex-1 max-w-sm rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-primary focus:border-primary px-4 py-2 transition-all" placeholder="확장자 입력" type="text"/>
+                <button id="addBtn" class="bg-primary hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-md flex items-center gap-1 transition-all">
+                    <span class="material-icons text-lg">add</span>
+                    추가
+                </button>
+            </div>
+        </section>
+
+        <!-- 커스텀 확장자 리스트 영역 -->
+        <div class="ml-0 md:ml-40 mt-4">
+            <div class="border border-slate-200 dark:border-slate-700 rounded-lg p-6 min-h-[240px] flex flex-col bg-slate-50/50 dark:bg-slate-800/50">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm font-medium text-slate-500 dark:text-slate-400">
+                        Current list: <span id="currentCount" class="text-slate-900 dark:text-white">0</span>/200
+                    </span>
+                </div>
+                <!-- 여기에 동적으로 태그들이 생성됩니다 -->
+                <div id="customExtensionList" class="flex flex-wrap gap-2">
+                    <!-- 예시 데이터는 삭제했습니다. JavaScript가 채워줄 거예요! -->
+                </div>
+            </div>
+            <p class="mt-4 text-xs text-slate-400 dark:text-slate-500 italic">
+                * 최대 200개 커스텀 확장자를 저장할 수 있습니다.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- 알림 Dialog -->
+<dialog id="alertDialog" class="rounded-xl shadow-2xl border-0 p-0 backdrop:bg-black/50 max-w-sm w-full">
+    <div class="bg-white dark:bg-slate-800 rounded-xl p-6">
+        <div class="flex items-start gap-4">
+            <div id="alertIcon" class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center">
+                <span class="material-icons text-xl"></span>
+            </div>
+            <div class="flex-1">
+                <h3 id="alertTitle" class="text-lg font-semibold text-slate-900 dark:text-white mb-2"></h3>
+                <p id="alertMessage" class="text-slate-600 dark:text-slate-300 text-sm"></p>
+            </div>
+        </div>
+        <div class="mt-6 flex justify-end">
+            <button id="alertCloseBtn" class="bg-primary hover:bg-blue-600 text-white font-medium px-5 py-2 rounded-lg transition-all">
+                확인
+            </button>
+        </div>
+    </div>
+</dialog>
+
+<!-- 확인 Dialog (confirm) -->
+<dialog id="confirmDialog" class="rounded-xl shadow-2xl border-0 p-0 backdrop:bg-black/50 max-w-sm w-full">
+    <div class="bg-white dark:bg-slate-800 rounded-xl p-6">
+        <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                <span class="material-icons text-xl text-amber-600 dark:text-amber-400">help_outline</span>
+            </div>
+            <div class="flex-1">
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">확인</h3>
+                <p id="confirmMessage" class="text-slate-600 dark:text-slate-300 text-sm"></p>
+            </div>
+        </div>
+        <div class="mt-6 flex justify-end gap-3">
+            <button id="confirmCancelBtn" class="px-5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 font-medium transition-all">
+                취소
+            </button>
+            <button id="confirmOkBtn" class="bg-red-500 hover:bg-red-600 text-white font-medium px-5 py-2 rounded-lg transition-all">
+                삭제
+            </button>
+        </div>
+    </div>
+</dialog>
+
+<!-- JS 파일 로드 (순서 중요: functions.js → app.js) -->
+<script src="/js/functions.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

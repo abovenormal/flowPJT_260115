@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="deleteFixedExtension 메서드" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.626Z" hostname="hansehwans-MacBook-Air.local" time="0.005">
+  <properties/>
+  <testcase name="고정 확장자를 비활성화한다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$DeleteFixedExtension" time="0.003"/>
+  <testcase name="존재하지 않는 고정 확장자는 무시한다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$DeleteFixedExtension" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

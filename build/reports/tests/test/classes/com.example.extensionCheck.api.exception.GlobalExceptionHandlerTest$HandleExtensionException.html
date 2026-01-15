@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ExtensionException 처리</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ExtensionException 처리</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.extensionCheck.api.exception.html">com.example.extensionCheck.api.exception</a> &gt; GlobalExceptionHandlerTest$HandleExtensionException</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.068s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">ALREADY_EXISTS - CONFLICT 반환</td>
+<td class="success">handleAlreadyExists_conflict()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">CONTAINS_DIGIT - BAD_REQUEST 반환</td>
+<td class="success">handleContainsDigit_badRequest()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">CONTAINS_KOREAN - BAD_REQUEST 반환</td>
+<td class="success">handleContainsKorean_badRequest()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">EMPTY_INPUT - BAD_REQUEST 반환</td>
+<td class="success">handleEmptyInput_badRequest()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">FIXED_EXTENSION_CONFLICT - CONFLICT 반환</td>
+<td class="success">handleFixedConflict_conflict()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAX_LIMIT_EXCEEDED - UNPROCESSABLE_ENTITY 반환</td>
+<td class="success">handleMaxLimitExceeded_unprocessableEntity()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">NOT_FOUND - NOT_FOUND 반환</td>
+<td class="success">handleNotFound_notFound()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">TOO_LONG - BAD_REQUEST 반환</td>
+<td class="success">handleTooLong_badRequest()</td>
+<td class="success">0.012s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">2026-01-15T16:44:46.653+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.654+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.654+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.656+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_002, message=확장자는 최대 20자입니다.
+2026-01-15T16:44:46.663+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.664+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.664+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.665+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_006, message=확장자를 찾을 수 없습니다.
+2026-01-15T16:44:46.672+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.672+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.672+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.674+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_004, message=확장자에 한글을 포함할 수 없습니다.
+2026-01-15T16:44:46.679+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.680+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.680+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.681+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_007, message=커스텀 확장자는 최대 200개까지 등록할 수 있습니다.
+2026-01-15T16:44:46.687+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.687+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.688+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.689+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_001, message=확장자를 입력해주세요.
+2026-01-15T16:44:46.696+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.696+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.697+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-01-15T16:44:46.698+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_003, message=확장자에 숫자를 포함할 수 없습니다.
+2026-01-15T16:44:46.704+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.704+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.704+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.706+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_005, message=이미 등록된 확장자입니다.
+2026-01-15T16:44:46.712+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.712+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.712+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.714+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_008, message=해당 확장자는 고정 확장자로 등록되어 사용할 수 없습니다.
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at 2026. 1. 15. 오후 4:44:47</p>
+</div>
+</div>
+</body>
+</html>

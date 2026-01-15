@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="deactivate 메서드" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.829Z" hostname="hansehwans-MacBook-Air.local" time="0.001">
+  <properties/>
+  <testcase name="isActive를 false로 변경한다" classname="com.example.extensionCheck.entity.ExtensionsTest$Deactivate" time="0.0"/>
+  <testcase name="이미 비활성화된 상태에서도 정상 동작한다" classname="com.example.extensionCheck.entity.ExtensionsTest$Deactivate" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

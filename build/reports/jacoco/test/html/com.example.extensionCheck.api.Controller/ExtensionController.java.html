@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExtensionController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">extensionCheck</a> &gt; <a href="index.source.html" class="el_package">com.example.extensionCheck.api.Controller</a> &gt; <span class="el_source">ExtensionController.java</span></div><h1>ExtensionController.java</h1><pre class="source lang-java linenums">package com.example.extensionCheck.api.Controller;
+
+import com.example.extensionCheck.api.Service.ExtensionService;
+import com.example.extensionCheck.api.request.FixedBatchRequest;
+import com.example.extensionCheck.api.response.ApiResponse;
+import com.example.extensionCheck.api.response.ExtensionListResponse;
+import com.example.extensionCheck.api.response.ExtensionResponse;
+import com.example.extensionCheck.entity.Extensions;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping(&quot;/api/extensions&quot;)
+public class ExtensionController {
+
+    private final ExtensionService extensionService;
+
+    /**
+     * 커스텀 확장자 추가
+     */
+    @PostMapping(&quot;/add&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;ExtensionResponse&gt;&gt; addExtension(
+            @RequestParam String customExtension) {
+<span class="fc" id="L26">        Extensions extension = extensionService.addExtension(customExtension);</span>
+<span class="fc" id="L27">        return ResponseEntity.ok(</span>
+<span class="fc" id="L28">                ApiResponse.ok(ExtensionResponse.from(extension), &quot;확장자가 추가되었습니다.&quot;)</span>
+        );
+    }
+
+    /**
+     * 커스텀 확장자 삭제(비활성화)
+     */
+    @DeleteMapping(&quot;/custom/{extName}&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; deleteCustomExtension(
+            @PathVariable String extName) {
+<span class="fc" id="L38">        extensionService.deactivateExtension(extName);</span>
+<span class="fc" id="L39">        return ResponseEntity.ok(ApiResponse.ok(&quot;확장자가 삭제되었습니다.&quot;));</span>
+    }
+
+    /**
+     * 고정 확장자 저장 (체크박스 체크 시)
+     */
+    @PostMapping(&quot;/fixed/{extName}&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;ExtensionResponse&gt;&gt; saveFixedExtension(
+            @PathVariable String extName) {
+<span class="fc" id="L48">        Extensions extension = extensionService.saveFixedExtension(extName);</span>
+<span class="fc" id="L49">        return ResponseEntity.ok(</span>
+<span class="fc" id="L50">                ApiResponse.ok(ExtensionResponse.from(extension), &quot;고정 확장자가 저장되었습니다.&quot;)</span>
+        );
+    }
+
+    /**
+     * 고정 확장자 삭제 (체크박스 해제 시)
+     */
+    @DeleteMapping(&quot;/fixed/{extName}&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; deleteFixedExtension(
+            @PathVariable String extName) {
+<span class="fc" id="L60">        extensionService.deleteFixedExtension(extName);</span>
+<span class="fc" id="L61">        return ResponseEntity.ok(ApiResponse.ok(&quot;고정 확장자가 해제되었습니다.&quot;));</span>
+    }
+
+    /**
+     * 고정 확장자 배치 업데이트 (여러 체크박스 한 번에 처리)
+     */
+    @PatchMapping(&quot;/fixed/batch&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; batchUpdateFixed(
+            @RequestBody FixedBatchRequest request) {
+<span class="fc" id="L70">        extensionService.batchUpdateFixed(request.getChecked(), request.getUnchecked());</span>
+<span class="fc" id="L71">        return ResponseEntity.ok(ApiResponse.ok(&quot;배치 업데이트가 완료되었습니다.&quot;));</span>
+    }
+
+    /**
+     * 활성화된 확장자 목록 조회
+     */
+    @GetMapping
+    public ResponseEntity&lt;ApiResponse&lt;ExtensionListResponse&gt;&gt; getList() {
+<span class="fc" id="L79">        ExtensionListResponse response = extensionService.getActiveExtensions();</span>
+<span class="fc" id="L80">        return ResponseEntity.ok(ApiResponse.ok(response));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

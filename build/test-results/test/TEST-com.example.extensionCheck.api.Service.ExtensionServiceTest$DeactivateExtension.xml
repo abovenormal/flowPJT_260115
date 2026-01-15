@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="deactivateExtension 메서드" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.166Z" hostname="hansehwans-MacBook-Air.local" time="0.404">
+  <properties/>
+  <testcase name="존재하지 않는 확장자면 NOT_FOUND 예외를 던진다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$DeactivateExtension" time="0.398"/>
+  <testcase name="존재하는 확장자를 비활성화한다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$DeactivateExtension" time="0.006"/>
+  <system-out><![CDATA[2026-01-15T16:44:46.570+09:00  INFO 53835 --- [extensionCheck] [    Test worker] c.e.e.api.Service.ExtensionService       : Deactivated extension: pdf
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

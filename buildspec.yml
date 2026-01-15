@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  build:
+    commands:
+      - chmod +x gradlew
+      - ./gradlew clean build -x test
+artifacts:
+  files:
+    - build/libs/*.jar
+    - appspec.yml
+    - scripts/**
+  discard-paths: no

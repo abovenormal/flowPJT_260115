@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GET /api/extensions" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.065Z" hostname="hansehwans-MacBook-Air.local" time="0.024">
+  <properties/>
+  <testcase name="목록 조회 성공" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$GetList" time="0.024"/>
+  <system-out><![CDATA[2026-01-15T16:44:46.074+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.074+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.074+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

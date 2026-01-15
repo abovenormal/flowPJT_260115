@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="batchUpdateFixed 메서드" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.620Z" hostname="hansehwans-MacBook-Air.local" time="0.006">
+  <properties/>
+  <testcase name="빈 리스트로 호출해도 예외가 발생하지 않는다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$BatchUpdateFixed" time="0.002"/>
+  <testcase name="null 리스트로 호출해도 예외가 발생하지 않는다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$BatchUpdateFixed" time="0.001"/>
+  <testcase name="여러 고정 확장자를 한 번에 업데이트한다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$BatchUpdateFixed" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

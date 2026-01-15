@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DELETE /api/extensions/fixed/{extName}" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.106Z" hostname="hansehwans-MacBook-Air.local" time="0.008">
+  <properties/>
+  <testcase name="고정 확장자 삭제 성공" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$DeleteFixedExtension" time="0.008"/>
+  <system-out><![CDATA[2026-01-15T16:44:46.112+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.112+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.112+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

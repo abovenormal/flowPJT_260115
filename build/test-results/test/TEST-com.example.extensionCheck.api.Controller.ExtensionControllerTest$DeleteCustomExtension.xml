@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DELETE /api/extensions/custom/{extName}" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.023Z" hostname="hansehwans-MacBook-Air.local" time="0.037">
+  <properties/>
+  <testcase name="커스텀 확장자 삭제 성공" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$DeleteCustomExtension" time="0.02"/>
+  <testcase name="존재하지 않는 확장자 삭제 시 NOT_FOUND 반환" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$DeleteCustomExtension" time="0.017"/>
+  <system-out><![CDATA[2026-01-15T16:44:46.031+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.031+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.031+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.051+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.052+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.052+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.058+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_006, message=확장자를 찾을 수 없습니다.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

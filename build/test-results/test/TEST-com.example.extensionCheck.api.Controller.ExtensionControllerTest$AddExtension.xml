@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="POST /api/extensions/add" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.116Z" hostname="hansehwans-MacBook-Air.local" time="0.047">
+  <properties/>
+  <testcase name="숫자 포함 시 BAD_REQUEST 반환" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$AddExtension" time="0.013"/>
+  <testcase name="중복 확장자 시 CONFLICT 반환" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$AddExtension" time="0.01"/>
+  <testcase name="확장자 추가 성공" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$AddExtension" time="0.009"/>
+  <testcase name="빈 입력 시 BAD_REQUEST 반환" classname="com.example.extensionCheck.api.Controller.ExtensionControllerTest$AddExtension" time="0.013"/>
+  <system-out><![CDATA[2026-01-15T16:44:46.122+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.122+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.123+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.127+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_003, message=확장자에 숫자를 포함할 수 없습니다.
+2026-01-15T16:44:46.136+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.136+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.136+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.138+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_005, message=이미 등록된 확장자입니다.
+2026-01-15T16:44:46.146+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.146+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.146+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.161+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-01-15T16:44:46.161+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-15T16:44:46.161+09:00  INFO 53835 --- [extensionCheck] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-01-15T16:44:46.163+09:00  WARN 53835 --- [extensionCheck] [    Test worker] c.e.e.a.e.GlobalExceptionHandler         : Extension exception: code=EXT_001, message=확장자를 입력해주세요.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

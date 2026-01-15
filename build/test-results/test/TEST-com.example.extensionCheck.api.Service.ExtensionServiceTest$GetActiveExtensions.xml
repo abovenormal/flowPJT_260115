@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="getActiveExtensions 메서드" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.600Z" hostname="hansehwans-MacBook-Air.local" time="0.017">
+  <properties/>
+  <testcase name="활성화된 확장자 목록을 반환한다" classname="com.example.extensionCheck.api.Service.ExtensionServiceTest$GetActiveExtensions" time="0.017"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

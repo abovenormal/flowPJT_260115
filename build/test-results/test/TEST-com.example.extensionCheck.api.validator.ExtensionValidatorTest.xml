@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ExtensionValidator 테스트" tests="16" skipped="0" failures="0" errors="0" timestamp="2026-01-15T07:44:46.749Z" hostname="hansehwans-MacBook-Air.local" time="0.077">
+  <properties/>
+  <testcase name="20자 이하 확장자는 예외 없이 통과한다" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.01"/>
+  <testcase name="[1] input = &quot;pdf1&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.005"/>
+  <testcase name="[2] input = &quot;1exe&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.001"/>
+  <testcase name="[3] input = &quot;doc2x&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <testcase name="[4] input = &quot;123&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <testcase name="유효한 확장자는 예외 없이 통과한다" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.001"/>
+  <testcase name="20자 초과 확장자는 TOO_LONG 예외를 던진다" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.001"/>
+  <testcase name="[1] input = &quot;한글&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.001"/>
+  <testcase name="[2] input = &quot;pdf한글&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.001"/>
+  <testcase name="[3] input = &quot;ㄱㄴㄷ&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <testcase name="[4] input = &quot;ㅏㅓㅗ&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.001"/>
+  <testcase name="[1] input = null" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <testcase name="[2] input = &quot;&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <testcase name="[3] input = &quot;   &quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <testcase name="[4] input = &quot;\t&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <testcase name="[5] input = &quot;\n&quot;" classname="com.example.extensionCheck.api.validator.ExtensionValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
