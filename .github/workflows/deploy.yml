@@ -42,6 +42,18 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Copy docker-compose to EC2
+        run: |
+          scp -i ~/.ssh/deploy_key docker-compose.yml ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ec2-user/app/
+
+      - name: Create .env file on EC2
+        run: |
+          ssh -i ~/.ssh/deploy_key ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "cat > /home/ec2-user/app/.env << EOF
+          DB_USERNAME=${{ secrets.DB_USERNAME }}
+          DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+          DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
+          EOF"
+
       - name: Deploy to EC2
         run: |
           ssh -i ~/.ssh/deploy_key ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "cd /home/ec2-user/app && docker-compose pull && docker-compose up -d"
