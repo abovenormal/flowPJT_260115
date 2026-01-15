@@ -1,6 +1,3 @@
-// ============================================
-// CONFIG - 상수 및 설정
-// ============================================
 const CONFIG = {
     API_BASE: '/api/extensions',
     WS_ENDPOINT: '/ws',
@@ -8,9 +5,6 @@ const CONFIG = {
     MAX_CUSTOM: 200
 };
 
-// ============================================
-// Dialog - 알림/확인 다이얼로그
-// ============================================
 const Dialog = {
     show(message, type = 'info') {
         const dialog = document.getElementById('alertDialog');
@@ -71,9 +65,7 @@ const Dialog = {
     }
 };
 
-// ============================================
 // API - 서버 통신 (AJAX)
-// ============================================
 const API = {
     getAll() {
         return $.ajax({
@@ -121,9 +113,7 @@ const API = {
     }
 };
 
-// ============================================
 // Debounce - 배치 처리 유틸리티
-// ============================================
 const Debounce = {
     pendingChanges: { checked: new Set(), unchecked: new Set() },
     timer: null,
@@ -162,9 +152,7 @@ const Debounce = {
     }
 };
 
-// ============================================
 // WS - WebSocket 연결
-// ============================================
 const WS = {
     client: null,
 
@@ -194,9 +182,7 @@ const WS = {
     }
 };
 
-// ============================================
 // UI - 화면 렌더링
-// ============================================
 const UI = {
     update(data) {
         // Delta 업데이트 처리
@@ -210,8 +196,6 @@ const UI = {
             return;
         }
 
-        // 전체 업데이트 (초기 로드 또는 type === 'full')
-        // 고정 확장자 체크박스 업데이트
         $('.fixed-ext').prop('checked', false);
         if (data.fixed && data.fixed.length > 0) {
             data.fixed.forEach((ext) => {
@@ -219,7 +203,6 @@ const UI = {
             });
         }
 
-        // 커스텀 리스트와 카운트 업데이트
         $('#customExtensionList').empty();
         if (data.custom) {
             data.custom.forEach((ext) => {
